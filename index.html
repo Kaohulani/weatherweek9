@@ -9,9 +9,19 @@
     <h1>Weather API Results</h1>
 
     <form action="/" method="post">
-        <label for="zipInput">Zip Code: </label>
-        <input id = "zipInput" type="text" name="zipInput">
+        <label for="cityInput">City: </label>
+        <input id = "cityInput" type="text" name="cityInput">
         <button type="submit">Go</button>
+    </form>
+
+    <br>
+
+    <form action="/" method="post">
+        <label for="latitudeInput">Latitude: </label>
+        <input id="latitudeInput" type="text" name="latitude">
+        <label for="longitudeInput">Longitude: </label>
+        <input id="longitudeInput" type="text" name="longitude">
+        <button type="submit">Get Weather</button>
     </form>
 
   </body>
