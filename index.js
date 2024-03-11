@@ -14,14 +14,15 @@ app.get("/", function (req, res) {
 // invoked after hitting go in the html form
 app.post("/", function (req, res) {
 
-    // takes in the city name from the html form
-    const latitude = req.body.latitude;
-    const longitude = req.body.longitude;
+  // Set default latitude and longitude for Hawaii
+    const latitude = "20.97";
+    const longitude = "-156.68";
+
 
     // build up the URL for the JSON query
     const units = "imperial";
     const apiKey = "873010304317811c87ca1b69b7854af9";
-    const url = "https://api.openweathermap.org/data/2.5/weather?q=" + latitude + longitude + "&units=" + units + "&APPID=" + apiKey;
+   const url = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&units=" + units + "&APPID=" + apiKey;
 
     // this gets the data from Open WeatherAPI
     https.get(url, function (response) {
@@ -61,3 +62,4 @@ app.post("/", function (req, res) {
 app.listen(process.env.PORT || 3000, function () {
     console.log("Server is running on port");
 });
+
